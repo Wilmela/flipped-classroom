@@ -1,14 +1,16 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Link, Tabs } from "expo-router";
+import { Pressable, useColorScheme } from "react-native";
 
-import Colors from '../../constants/Colors';
+import Colors from "../../constants/Colors";
+import { COLORS, FONTS, SIZES } from "../../constants/theme";
+import { StyledText } from "../../components";
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
 }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
@@ -20,34 +22,51 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        headerTitleStyle: {
+          fontFamily: FONTS.Bold,
+          fontSize: SIZES.large - 5,
+          color:COLORS.APP_ASH
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+          title: "HOME",
+          headerTitle: "",
+          headerLeft: () => {
+            return (
+              <StyledText
+                text="FCLIP"
+                size={SIZES.large - 5}
+                family={FONTS.Bold}
+                className="text-APP_YELLOW pl-4"
+              />
+            );
+          },
+
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarActiveTintColor: COLORS.APP_ASH,
+        }}
+      />
+
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: "ABOUT",
+          tabBarIcon: ({ color }) => <TabBarIcon name="info" color={color} />,
+          tabBarActiveTintColor: COLORS.APP_ASH,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="contact"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "CONTACT",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="phone-square" color={color} />
+          ),
+          tabBarActiveTintColor: COLORS.APP_ASH,
         }}
       />
     </Tabs>

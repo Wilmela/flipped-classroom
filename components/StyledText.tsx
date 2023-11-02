@@ -1,5 +1,30 @@
-import { Text, TextProps } from './Themed';
+import { View, Text, StyleProp, TextStyle } from "react-native";
+import React from "react";
+import { COLORS, FONTS, SIZES } from "../constants/theme";
 
-export function MonoText(props: TextProps) {
-  return <Text {...props} style={[props.style, { fontFamily: 'SpaceMono' }]} />;
-}
+type Props = {
+  text: string;
+  family: string;
+  size: number;
+  className?: string;
+  style?: StyleProp<any>;
+};
+const StyledText = ({ text, family, size, className, style }: Props) => {
+  return (
+    <Text
+      className={`${className}`}
+      style={[
+        {
+          fontFamily: family,
+          fontSize: size,
+          color: COLORS.APP_ASH,
+        },
+        { ...style },
+      ]}
+    >
+      {text}
+    </Text>
+  );
+};
+
+export default StyledText;
