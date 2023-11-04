@@ -1,35 +1,55 @@
-import { View, Text, FlatList, useWindowDimensions, Image, Linking } from "react-native";
-import React, { useEffect } from "react";
-import { socials } from "../../constants/socials";
+import {
+  View,
+  Text,
+  FlatList,
+  useWindowDimensions,
+  Image,
+  Linking,
+} from "react-native";
+import React, { useEffect, useState } from "react";
+// import { socials } from "../../constants/socials";
 import { AppTouchable, Container, StyledText } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants/theme";
 import { student } from "../../assets/images";
-import { useRouter } from "expo-router";
 import { pulseAnimation } from "../../util";
 import {
-  useAnimatedStyle,
   useSharedValue,
   withDelay,
   withRepeat,
   withSequence,
   withSpring,
-  withTiming,
-  Easing,
 } from "react-native-reanimated";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Socials } from "../../type/type";
 
 const Contact = () => {
+  const [email, setEmail] = useState<string>("");
+  const [whatsapp, setWhatsapp] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+
   const { Animated, rStyle } = pulseAnimation(View, 0.95);
 
   const { width } = useWindowDimensions();
-  const router = useRouter();
 
   const progress = useSharedValue(0);
 
-  const aniTextStyle = useAnimatedStyle(() => {
-    return {
-      transform: [{ rotateZ: `${progress.value}rad` }],
-    };
-  }, []);
+  const socials: Socials[] = [
+    {
+      title: "What's app",
+      icon: "whatsapp",
+      url: `whatsapp://send?text=Hello Sir&phone=+234${whatsapp}`,
+    },
+    {
+      title: "Email",
+      icon: "envelope",
+      url: `mailto:${email}?subject=Hello Sir`,
+    },
+    {
+      title: "Phone",
+      icon: "phone",
+      url: `tel:+234${phone}`,
+    },
+  ];
 
   useEffect(() => {
     const rotateIn = withSpring(2 * Math.PI, { damping: 2, stiffness: 60 });
@@ -37,6 +57,38 @@ const Contact = () => {
 
     progress.value = withRepeat(withSequence(rotateIn, rotateOut), -1, false);
   }, []);
+
+  useEffect(() => {
+    // Function to fetch values from AsyncStorage
+    const getKeys = async () => {
+      const res = await AsyncStorage.multiGet(["email", "whatsapp", "phone"]);
+
+      for (const [k, v] of res) {
+        if (k === "email") {
+          setEmail(String(v));
+        }
+        if (k === "whatsapp") {
+          setWhatsapp(String(v));
+        }
+        if (k === "phone") {
+          setPhone(String(v));
+        }
+      }
+    };
+
+    // Call the function to initialize the component's state
+    getKeys();
+
+    // Use AsyncStorage.setItem to update values (for example, when user changes them)
+    async function updateAsyncStorage() {
+      await AsyncStorage.setItem("email", email);
+      await AsyncStorage.setItem("whatsapp", whatsapp);
+      await AsyncStorage.setItem("phone", phone);
+    }
+
+    // Call updateAsyncStorage whenever one of the values changes
+    updateAsyncStorage();
+  }, [email, phone, whatsapp]);
   return (
     <Container>
       <Animated.View className="pt-10 items-center justify-center w-full relative bg-transparent">
@@ -60,10 +112,16 @@ const Contact = () => {
       {/* Second half */}
 
       <StyledText
+        text="Darlington"
+        size={SIZES.normal}
+        family={FONTS.Light}
+        className="text-center my-2"
+      />
+      <StyledText
         text="You can reach me on:"
         size={SIZES.large - 7}
         family={FONTS.Bold}
-        className="text-center my-2"
+        className="text-center mb-2"
       />
 
       {/* Third half */}

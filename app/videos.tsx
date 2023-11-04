@@ -27,6 +27,7 @@ const Videos = () => {
                 width: width * 0.35,
                 height: width * 0.35,
                 marginRight: 20,
+                marginBottom: 15
               }}
             >
               <VideoPlayer url={item?.url} />

@@ -1,243 +1,234 @@
 export default [
   {
-    quiz: "Machine Tools",
+    quiz: "Cutting Operations",
     questions: [
       {
         question:
-          "1.	An operation that is carried out on the lathe in other to produce an external conical surface on a workpiece is known as ? ",
-        answerA: "taper tinning ",
-        answerB: "braze timing ",
-        answerC: "surface smiting ",
-        answerD: "facing ",
-        correctAnswer: "A",
-      },
-
-      {
-        question:
-          "2.	___ is a process of producing a cylindrical holes in a workpiece with the help of a drill ?",
-        answerA: "capping ",
-        answerB: "tapping",
-        answerC: "stepping",
-        answerD: "drilling",
+          "1.	All except _____ is not a system used for tool designation ? ",
+        answerA: "ASA ",
+        answerB: "ANSI ",
+        answerC: "ORS ",
+        answerD: "AISO ",
         correctAnswer: "D",
       },
-      {
-        question:
-          "3.	In drilling operation using the lathe,  ___ is held in the chuck ?",
-        answerA: "drill",
-        answerB: "cutting tool",
-        answerC: "workpiece",
-        answerD: "reamer",
-        correctAnswer: "C",
-      },
-      {
-        question: "4.	In a reaming process, the reamer is held in the __? ",
-        answerA: "tool post.",
-        answerB: "head stock. ",
-        answerC: "reamer holder",
-        answerD: "tail stock",
-        correctAnswer: "D",
-      },
-      {
-        question:
-          "5.	The operation of enlarging a hole already made in a workpiece is called ? ",
-        answerA: "reamer",
-        answerB: "facing",
-        answerC: "knurling",
-        answerD: "boring",
-        correctAnswer: "D",
-      },
-    ],
-  },
 
-  {
-    quiz: "Fuel System",
-    questions: [
       {
-        question:
-          "1.	The exposed section of the tank is generally made of heavier ___ for protection from the road damage and corrosion ?",
-        answerA: "steel",
-        answerB: "plie",
-        answerC: "operational system",
-        answerD: "plunger",
+        question: "2.	_______ is not a type of rake pattern ",
+        answerA: "Neutral rake ",
+        answerB: "Negative rake",
+        answerC: "Positive rake",
+        answerD: "Zero rake",
         correctAnswer: "A",
       },
       {
         question:
-          "2.	_____ is placed in the fuel tank to avoid complete filling to the ?",
-        answerA: "filter tube",
-        answerB: "expansion tube",
-        answerC: "carburetor tube ",
-        answerD: "line tube",
-        correctAnswer: "A",
-      },
-      {
-        question: "3.	____ is a well-known positive displacement pump ?",
-        answerA: "diaphragm pump",
-        answerB: "chamber pump",
-        answerC: "pressure pump",
-        answerD: "higher pump",
-        correctAnswer: "A",
-      },
-      {
-        question:
-          "4.	To reduce the risk of fire the electric fuel transfer pumps is put within the fuel ___?",
-        answerA: "chamber",
-        answerB: "filter house",
-        answerC: "oil sink",
-        answerD: "between gasket",
-        correctAnswer: "A",
-      },
-      {
-        question:
-          "5.	If a car has an electric fuel pump the car may clear any build-up pr obstruction within a ____?",
-        answerA: "fuel system",
-        answerB: "oil gauge",
-        answerC: "oil pump",
-        answerD: "filter system",
-        correctAnswer: "A",
-      },
-    ],
-  },
-
-  {
-    quiz: "Properties of Metal",
-    questions: [
-      {
-        question: "1.	A piece of metal may be broken due to ?",
-        answerA: "fatigue",
-        answerB: "rubber-stamping",
-        answerC: "conductivity",
-        answerD: "electricity",
-        correctAnswer: "A",
-      },
-      {
-        question:
-          "2.	The property of metal which permits permanent deformation without rupture is known as ? ",
-        answerA: "fatigue",
-        answerB: "creep",
-        answerC: "conductivity",
-        answerD: "failure",
-        correctAnswer: "C",
-      },
-      {
-        question:
-          "3.	Weldability is the specific term which indicate the relative ease with which metal may be welded by ___ means ?",
-        answerA: "practical",
-        answerB: "assigned",
-        answerC: "generally",
-        answerD: "authentic",
-        correctAnswer: "A",
-      },
-      {
-        question:
-          "4.	___ is that quality which enables a metal join readily with another metal when heated ?",
-
-        answerA: "practical",
-        answerB: "weldability",
-        answerC: "liquid",
-        answerD: "fusibilty",
-        correctAnswer: "D",
-      },
-      {
-        question:
-          "5.	Ductility of steel varies depending on the types and level of ___ element present ?",
-        answerA: "profile",
-        answerB: "offset",
-        answerC: "alloying",
-        answerD: "ranked material",
-        correctAnswer: "C",
-      },
-    ],
-  },
-
-  {
-    quiz: "Foundry Tools",
-    questions: [
-      {
-        question: "1.	Which of the statement is wrong? ",
-        answerA: "A slick is used for repairing and finishing a mold ",
-        answerB: "A gagger is used for clearing the molding sound or metal ",
-        answerC:
-          "A swab is used for moisturing the molded object around the edge ",
-        answerD:
-          "A stripper-plate machine is used to draw the pattern from the mold ",
+          "3.	Which rake pattern is required when cutting is done at high speeds?",
+        answerA: "Neutral rake ",
+        answerB: "Negative rake",
+        answerC: "Positive rake",
+        answerD: "Zero rake",
         correctAnswer: "B",
       },
       {
-        question: "2.	Swab is used for ",
-        answerA: "Smoothing and clearing out depression in the mold ",
-        answerB: "Cleaning the mold object ",
-        answerC: "Moisture the molded object around the edge ",
-        answerD: "Re-enforcing of the molding object ",
+        question: "4.	The method of metal cutting are ? ",
+        answerA:
+          "Orthogonal and oblique cutting a)	Orthogonal and oblique cutting .",
+        answerB: "Diagonal and horizontal cutting. ",
+        answerC: "Vertical and horizontal cutting ",
+        answerD: "All of the above",
         correctAnswer: "A",
+      },
+      {
+        question: "5.	______ is not a type of chip formation in metal cutting? ",
+        answerA: "Continuous chips ",
+        answerB: "Continuous chips with built up edge ",
+        answerC: "Discontinuous chips ",
+        answerD: "Discontinuous chips with built up edge.",
+        correctAnswer: "D",
+      },
+    ],
+  },
+
+  {
+    quiz: "Lathe Machine Operations",
+    questions: [
+      {
+        question:
+          "1.	On the lathe, work piece is held on all of the above except ?",
+        answerA: "Chuck",
+        answerB: "Mandrel",
+        answerC: "Between center",
+        answerD: "Saddle",
+        correctAnswer: "D",
+      },
+      {
+        question: "2. ______ is not a turning operation ?",
+        answerA: "Rough",
+        answerB: "Shoulder",
+        answerC: "Taper",
+        answerD: "Forming",
+        correctAnswer: "D",
       },
       {
         question:
-          "3.	____is a commonly used pouring equipment, for pouring the molten metal from furnace ?",
-        answerA: "ladles",
-        answerB: "can ",
-        answerC: "plastic cup",
-        answerD: "plate",
-        correctAnswer: "A",
-      },
-      {
-        question: "4.	Shank ladles are used for __ very small?",
-        answerA: "casting",
-        answerB: "scooping",
-        answerC: "floating",
-        answerD: "lipping",
+          "3.	Operations performed on the lathe using special attachments are ?",
+        answerA: "Parting-off and drilling ",
+        answerB: "Boring and reaming ",
+        answerC: "Grinding and milling ",
+        answerD: "None of the listed",
         correctAnswer: "C",
       },
       {
         question:
-          "5.	Larger size of shank ladles that are capable of holding 30kg to 60kg of molten metal is known as ? ",
-        answerA: "big shank ladle",
-        answerB: "crucible ladles",
-        answerC: "bull ladles",
-        answerD: "tilting type ladle",
+          "4.	The preferred option for holding an odd-shaped work piece in a center lathe is ?",
+        answerA: "Live and dead centers ",
+        answerB: "Three jaws chuck ",
+        answerC: "Lathe dog ",
+        answerD: "Four jaws chuck",
+        correctAnswer: "D",
+      },
+      {
+        question:
+          "5.	Which of the following chucks in the lathe machine is known as universal chuck?",
+        answerA: "Magnetic chuck ",
+        answerB: "Face plate",
+        answerC: "Three jaws chuck ",
+        answerD: "Four jaws chuck",
+        correctAnswer: "C",
+      },
+    ],
+  },
+
+  {
+    quiz: "Grinding Operations",
+    questions: [
+      {
+        question: "1.	All these are grinding operations except ?",
+        answerA: "Taper grinding ",
+        answerB: "Cylindrical grinding",
+        answerC: "Threading grinding ",
+        answerD: "Machine grinding",
+        correctAnswer: "D",
+      },
+      {
+        question: "2.	______ is not a surface grinding machine type? ",
+        answerA: "Longitudinal spindle and rotary table type ",
+        answerB: "Horizontal spindle and rotary table type ",
+        answerC: "Vertical spindle and reciprocating type ",
+        answerD: "Horizontal spindle and reciprocating type",
+        correctAnswer: "A",
+      },
+      {
+        question:
+          "3.	Precision grinders are used to finish parts to very accurate dimensions. The main types are all except ?",
+        answerA: "Tool and cutter grinding machine",
+        answerB: "Internal grinding machine ",
+        answerC: "Special grinding machine",
+        answerD: "Hand grinding machine",
+        correctAnswer: "D",
+      },
+      {
+        question: "4.	Grinding machines are of ?",
+
+        answerA: "Rough and precision ",
+        answerB: "Rough and flexible ",
+        answerC: "Precision and cylindrical ",
+        answerD: "Internal and surface",
+        correctAnswer: "A",
+      },
+      {
+        question:
+          "5.	Abrasives used for grinding and polishing operations should have the following properties except ?",
+        answerA: "Brittleness ",
+        answerB: "Hardness ",
+        answerC: "Toughness ",
+        answerD: "Resistance",
         correctAnswer: "A",
       },
     ],
   },
 
   {
-    quiz: "Ferrous Metal",
+    quiz: "Drilling Operations",
     questions: [
       {
+        question: "1.	______ is not a drilling operation ? ",
+        answerA: "Grinding ",
+        answerB: "Drilling  ",
+        answerC: "Boring ",
+        answerD: "Milling",
+        correctAnswer: "D",
+      },
+      {
+        question: "2.	Drilling machine tools are all except ? ",
+        answerA: "Taper shank core ",
+        answerB: "Two-lip twist",
+        answerC: "Deep hole ",
+        answerD: "Flat spade ",
+        correctAnswer: "C",
+      },
+      {
+        question: "3.	In a drilling operation, the metal is removed by ?",
+        answerA: "Shearing ",
+        answerB: "Extrusion ",
+        answerC: "Shearing and extrusion ",
+        answerD: "Shearing and Compression",
+        correctAnswer: "C",
+      },
+      {
+        question: "4.	The cutting edges of the twist drill are known as ?",
+        answerA: "Flanks ",
+        answerB: "Wedges ",
+        answerC: "Flutes ",
+        answerD: "Lips",
+        correctAnswer: "D",
+      },
+      {
         question:
-          "1.	___ obtained from blast furnace is most impure and needs refining before using it for casting ?",
-        answerA: "pig iron ",
-        answerB: "manganese ",
-        answerC: "silicon ",
-        answerD: "iron ore ",
+          "5.	The ______ drilling machine is commonly used to drill small sized holes ? ",
+        answerA: "Sensitive ",
+        answerB: "Portable ",
+        answerC: "Upright ",
+        answerD: "Deep hole",
+        correctAnswer: "B",
+      },
+    ],
+  },
+
+  {
+    quiz: "Milling Operations",
+    questions: [
+      {
+        question: "1. The cutting tool in a milling machine is mounted on ?",
+        answerA: "Spindle  ",
+        answerB: "Knee  ",
+        answerC: "Column  ",
+        answerD: "Arbour",
         correctAnswer: "A",
       },
       {
-        question:
-          "2.	In the manufacture of cast iron, the furnace used is called ?",
-        answerA: "blast furnace ",
-        answerB: "gas furnace ",
-        answerC: "mold furnace ",
-        answerD: "cupola ",
+        question: "2.	In a milling machine, the feed is provided by moving  ?",
+        answerA: "A rotating cutter into a stationary work piece ",
+        answerB: "A rotating cutter into  a reciprocating work piece ",
+        answerC: "A reciprocating cutter into a stationary work ",
+        answerD: "A work piece into a rotating cutter ",
         correctAnswer: "D",
       },
       {
-        question: "3.	The carbon content in grey cast iron is ?",
-        answerA: "5% to 5.5% ",
-        answerB: "10% ",
-        answerC: "8% ",
-        answerD: "3% to 3.5%  ",
+        question: "3.	Up milling is also called as ?",
+        answerA: "End milling ",
+        answerB: "Face milling ",
+        answerC: "Climb milling ",
+        answerD: "Conventional milling",
         correctAnswer: "D",
       },
       {
-        question:
-          "4.	The white colour in white cast iron is due to the fact that the carbon is in the form of a ___ ?",
-        answerA: "rock",
-        answerB: "foam ",
-        answerC: "gray ",
-        answerD: "carbide ",
-        correctAnswer: "D",
+        question: "5.	Which is the simplest type of milling machine ?",
+        answerA: "Universal milling machine ",
+        answerB: "Ominiversal milling machine ",
+        answerC: "Face milling  ",
+        answerD: "End milling ",
+        correctAnswer: "A",
       },
       {
         question: "5.	The percentage of manganese in white cast iron is ?",
@@ -245,58 +236,7 @@ export default [
         answerB: "2% ",
         answerC: "3.5% ",
         answerD: "4% ",
-        correctAnswer: "A",
-      },
-    ],
-  },
-
-  {
-    quiz: "Wheels and Tyres",
-    questions: [
-      {
-        question:
-          "1.	___ types of tyres are very noisy due to their extra heavy tread ?",
-        answerA: "treaded tyres",
-        answerB: "high pressure tyres",
-        answerC: "studded tyres",
-        answerD: "tubed tyres",
         correctAnswer: "C",
-      },
-      {
-        question:
-          "2.	___ part of the tyre offer support and protection to the side walls ?",
-        answerA: "tread",
-        answerB: "inner liner  ",
-        answerC: "beads",
-        answerD: "shoulder",
-        correctAnswer: "D",
-      },
-      {
-        question:
-          "3.	Wearing out of wheel blocking or wrong fitting may lead to ___?",
-        answerA: "wheel wobble",
-        answerB: "one sided wear of tyre ",
-        answerC: "wheel bounce",
-        answerD: "center wear",
-        correctAnswer: "A",
-      },
-      {
-        question:
-          "4.	Incorrect tyre inflation, eccentricity of wheel and tyre may lead ?",
-        answerA: "side wear of tyre ",
-        answerB: "wheel bounce ",
-        answerC: "center wear",
-        answerD: "one side wear ",
-        correctAnswer: "B",
-      },
-      {
-        question:
-          "5.	Feathered edge tread wear may be caused by one of the following ?",
-        answerA: "centre toe-out ",
-        answerB: "front toe-out ",
-        answerC: "exhaust valve in balance ",
-        answerD: "toe-in or toe-out of the tyre",
-        correctAnswer: "D",
       },
     ],
   },

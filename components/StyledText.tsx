@@ -3,7 +3,7 @@ import React from "react";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
 
 type Props = {
-  text: string;
+  text: string | any;
   family: string;
   size: number;
   className?: string;

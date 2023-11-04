@@ -1,4 +1,4 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import {
   DarkTheme,
   DefaultTheme,
@@ -30,7 +30,7 @@ export default function RootLayout() {
     SemiBold: require("../assets/fonts/Switzer-Semibold.otf"),
     Medium: require("../assets/fonts/Switzer-Medium.otf"),
     Light: require("../assets/fonts/Switzer-Light.otf"),
-    ...FontAwesome.font,
+    ...FontAwesome5.font,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.

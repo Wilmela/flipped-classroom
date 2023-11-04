@@ -1,4 +1,4 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { Link, Tabs } from "expo-router";
 import { Pressable, useColorScheme } from "react-native";
 
@@ -10,10 +10,10 @@ import { StyledText } from "../../components";
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
+  name: React.ComponentProps<typeof FontAwesome5>["name"];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome5 size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -65,6 +65,16 @@ export default function TabLayout() {
           title: "CONTACT",
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="phone-square" color={color} />
+          ),
+          tabBarActiveTintColor: COLORS.APP_ASH,
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "SETTINGS",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="steam" color={color} />
           ),
           tabBarActiveTintColor: COLORS.APP_ASH,
         }}
