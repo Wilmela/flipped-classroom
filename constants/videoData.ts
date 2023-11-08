@@ -8,22 +8,22 @@ const v5 = require('../assets/videos/v5.mp4');
 export default [
   {
     title: "Cutting Operations",
-    url: v1,
-  },
-  {
-    title: "Lathe Machine Operations",
     url: v2,
   },
   {
+    title: "Lathe Machine Operations",
+    url: v5,
+  },
+  {
     title: "Grinding Operations",
-    url: v3,
+    url: v1,
   },
   {
     title: "Drilling Operations",
-    url: v4,
+    url: v3,
   },
   {
     title: "Milling Operations",
-    url: v5,
+    url: v4,
   },
 ];
