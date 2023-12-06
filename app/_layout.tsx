@@ -9,6 +9,7 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
+import { checkOS } from "../util/helper";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,11 +59,11 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack
         screenOptions={{
-          headerTitleStyle:{
+          headerTitleStyle: {
             fontFamily: FONTS.Bold,
             fontSize: SIZES.large - 5,
             color: COLORS.APP_ASH,
-          }
+          },
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -71,13 +72,16 @@ function RootLayoutNav() {
           name="read"
           options={{
             title: "TOPICS",
-            presentation: "containedTransparentModal",
+            presentation: checkOS("containedTransparentModal"),
           }}
         />
         <Stack.Screen name="videos" options={{ title: "VIDEO PLAYLIST" }} />
         <Stack.Screen
           name="quizzes"
-          options={{ title: "QUIZ", presentation: "containedTransparentModal" }}
+          options={{
+            title: "QUIZ",
+            presentation: checkOS("containedTransparentModal"),
+          }}
         />
       </Stack>
     </ThemeProvider>

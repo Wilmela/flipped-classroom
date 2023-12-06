@@ -6,11 +6,11 @@ import {
   Image,
   Linking,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import { socials } from "../../constants/socials";
 import { AppTouchable, Container, StyledText } from "../../components";
 import { COLORS, FONTS, SIZES } from "../../constants/theme";
-import { student } from "../../assets/images";
+import { darlington, student } from "../../assets/images";
 import { pulseAnimation } from "../../util";
 import {
   useSharedValue,
@@ -21,6 +21,7 @@ import {
 } from "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Socials } from "../../type/type";
+import { checkScreenSize } from "../../util/helper";
 
 const Contact = () => {
   const [email, setEmail] = useState<string>("");
@@ -96,16 +97,22 @@ const Contact = () => {
           className="bg-APP_RED opacity-30"
           style={[
             {
-              width: width * 0.8,
-              height: width * 0.8,
-              borderRadius: (width * 0.8) / 2,
+              width: checkScreenSize(width * 0.7, width * 0.8),
+
+              height: checkScreenSize(width * 0.7, width * 0.8),
+
+              borderRadius: width / 2,
             },
             rStyle,
           ]}
         />
 
         <View className="absolute">
-          <Image source={student} resizeMode="contain" style={{ width: 200 }} />
+          <Image
+            source={student}
+            resizeMode="contain"
+            style={{ width: checkScreenSize(170, 200) }}
+          />
         </View>
       </Animated.View>
 

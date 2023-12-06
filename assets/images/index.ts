@@ -22,6 +22,7 @@ const dr15 = require("./dr15.png");
 const mi1 = require("./mi1.png");
 const mi2 = require("./mi2.png");
 const mi3 = require("./mi3.png");
+const darlington = require("./darlington.jpg");
 
 export {
   student,
@@ -48,4 +49,5 @@ export {
   mi1,
   mi2,
   mi3,
+  darlington,
 };

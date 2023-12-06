@@ -1,21 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container } from "../../components";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { emailSchema, phoneAndWhatsAppSchema, setKey } from "../../util/helper";
 import { Input } from "../../components";
 import { useRouter } from "expo-router";
+import { COLORS } from "../../constants/theme";
 
 const Settings = () => {
   const [email, setEmail] = useState<string>("");
   const [whatsapp, setWhatsapp] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [emailError, setEmailError] = useState("");
+  const [whatsappError, setWhatsappError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   const router = useRouter();
 
   const updateEmail = async () => {
+    const data = emailSchema.safeParse(email);
+    if (!data.success) {
+      const error = data.error.errors.map((e) => e.message);
+      setEmailError(error.toString());
+      return;
+    }
+
     try {
-      await setKey("email", emailSchema.parse(email));
+      await setKey("email", data.data);
       setEmail("");
       router.replace("/contact");
     } catch (error) {
@@ -24,8 +33,14 @@ const Settings = () => {
   };
 
   const updateWhatsapp = async () => {
+    const data = phoneAndWhatsAppSchema.safeParse(whatsapp);
+    if (!data.success) {
+      const error = data.error.errors.map((e) => e.message);
+      setWhatsappError(error.toString());
+      return;
+    }
     try {
-      await setKey("whatsapp", phoneAndWhatsAppSchema.parse(whatsapp));
+      await setKey("whatsapp", data.data);
       setWhatsapp("");
       router.replace("/contact");
     } catch (error) {
@@ -34,8 +49,14 @@ const Settings = () => {
   };
 
   const updatePhone = async () => {
+    const data = phoneAndWhatsAppSchema.safeParse(phone);
+    if (!data.success) {
+      const error = data.error.errors.map((e) => e.message);
+      setPhoneError(error.toString());
+      return;
+    }
     try {
-      await setKey("phone", phoneAndWhatsAppSchema.parse(phone));
+      await setKey("phone", data.data);
       setPhone("");
       router.replace("/contact");
     } catch (error) {
@@ -46,25 +67,28 @@ const Settings = () => {
   return (
     <Container className="pt-10">
       <Input
-        title="Email"
+        title={emailError ? emailError : "Email"}
         value={email}
         handleChange={(e: string) => setEmail(e)}
         handleUpdate={updateEmail}
         placeholder="Enter email"
+        color={emailError ? "red" : COLORS.APP_ASH}
       />
       <Input
-        title="Whatsapp"
+        title={whatsappError ? whatsappError : "Whatsapp"}
         value={whatsapp}
         handleChange={(e: string) => setWhatsapp(e)}
         handleUpdate={updateWhatsapp}
         placeholder="e.g 9079125783"
+        color={whatsappError ? "red" : COLORS.APP_ASH}
       />
       <Input
-        title="Phone"
+        title={phoneError ? phoneError : "Phone"}
         value={phone}
         handleChange={(e: string) => setPhone(e)}
         handleUpdate={updatePhone}
         placeholder="e.g 9079125783"
+        color={phoneError ? "red" : COLORS.APP_ASH}
       />
     </Container>
   );

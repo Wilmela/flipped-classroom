@@ -2,7 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import React from "react";
 import topics from "../constants/lessonData";
 import { MaterialIcons } from "@expo/vector-icons";
-import { StyledView, Container, StyledText } from "../components";
+import { Container, StyledText } from "../components";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
 import { useRouter } from "expo-router";
 
@@ -16,7 +16,7 @@ const Read = () => {
   const router = useRouter();
 
   return (
-    <Container className="gap-5 pt-10">
+    <Container className="gap-5 pt-10 ">
       {topics.map((topic: TOPIC) => (
         <View key={topic.topic}>
           <Pressable

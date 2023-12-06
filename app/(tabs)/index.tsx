@@ -1,4 +1,11 @@
-import { View, Text, FlatList, useWindowDimensions, Image } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  useWindowDimensions,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useEffect } from "react";
 import { actions } from "../../constants/actions";
 import { AppTouchable, Container, StyledText } from "../../components";
@@ -16,11 +23,13 @@ import {
   withTiming,
   Easing,
 } from "react-native-reanimated";
+import { screens } from "../../constants/screens";
+import { checkScreenSize } from "../../util/helper";
 
 const Home = () => {
   const { Animated, rStyle } = pulseAnimation(View, 0.95);
 
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const router = useRouter();
 
   const progress = useSharedValue(0);
@@ -40,81 +49,92 @@ const Home = () => {
 
   return (
     <Container className="gap-5 items-center">
-      <Animated.View className="pt-5 items-center justify-center w-full relative bg-transparent">
-        <Animated.View
-          className="bg-APP_YELLOW opacity-30"
-          style={[
-            {
-              width: width * 0.8,
-              height: width * 0.8,
-              borderRadius: (width * 0.8) / 2,
-            },
-            rStyle,
-          ]}
-        />
+      <ScrollView>
+        <>
+          <Animated.View className="pt-5 items-center justify-center w-full relative bg-transparent">
+            <Animated.View
+              className="bg-APP_YELLOW opacity-30"
+              style={[
+                {
+                  width: checkScreenSize(width * 0.7, width * 0.8),
 
-        <View className="absolute">
-          <Image source={student} resizeMode="contain" style={{ width: 200 }} />
-        </View>
-      </Animated.View>
+                  height: checkScreenSize(width * 0.7, width * 0.8),
 
-      {/* Second half */}
-      <View className="items-center">
-        <Animated.Text
-          style={[
-            {
-              fontFamily: FONTS.Bold,
-              fontSize: SIZES.large * 1.3,
-              color: COLORS.APP_ASH,
-            },
-            aniTextStyle,
-          ]}
-        >
-          Flipped
-        </Animated.Text>
-        <Text
-          style={{
-            fontFamily: FONTS.Bold,
-            fontSize: SIZES.exLarge * 1.3,
-            color: COLORS.APP_ASH,
-            textTransform: "uppercase",
-          }}
-        >
-          Classroom
-        </Text>
-        <StyledText
-          text="-Make Learning Personal-"
-          size={SIZES.normal}
-          family={FONTS.Light}
-        />
-      </View>
+                  borderRadius: width / 2,
+                },
+                rStyle,
+              ]}
+            />
+            <View className="absolute">
+              <Image
+                source={student}
+                resizeMode="contain"
+                style={{
+                  width: checkScreenSize(170, 200),
+                }}
+              />
+            </View>
+          </Animated.View>
 
-      {/* Third half */}
-      <View className="w-full items-center bg-transparent">
-        <FlatList
-          data={actions}
-          keyExtractor={(item) => item.title}
-          renderItem={({ item }) => {
-            return (
-              <View className="items-center">
-                <AppTouchable
-                  name={item.icon}
-                  color="blue"
-                  onPress={() => router.push(`/${item.title}`)}
-                />
-                <StyledText
-                  text={item.title}
-                  family={FONTS.Light}
-                  size={SIZES.normal}
-                  className="text-APP_ASH capitalize"
-                />
-              </View>
-            );
-          }}
-          horizontal
-          contentContainerStyle={{ gap: width * 0.15 }}
-        />
-      </View>
+          {/* Second half */}
+          <View className="items-center">
+            <Animated.Text
+              style={[
+                {
+                  fontFamily: FONTS.Bold,
+                  fontSize: SIZES.large * 1.3,
+                  color: COLORS.APP_ASH,
+                },
+                aniTextStyle,
+              ]}
+            >
+              Flipped
+            </Animated.Text>
+            <Text
+              style={{
+                fontFamily: FONTS.Bold,
+                fontSize: SIZES.exLarge * 1.3,
+                color: COLORS.APP_ASH,
+                textTransform: "uppercase",
+              }}
+            >
+              Classroom
+            </Text>
+            <StyledText
+              text="-Make Learning Personal-"
+              size={SIZES.normal}
+              family={FONTS.Light}
+            />
+          </View>
+
+          {/* Third half */}
+          <View className="w-full items-center bg-transparent">
+            <FlatList
+              data={actions}
+              keyExtractor={(item) => item.title}
+              renderItem={({ item }) => {
+                return (
+                  <View className="items-center">
+                    <AppTouchable
+                      name={item.icon}
+                      color="blue"
+                      onPress={() => router.push(`/${item.title}`)}
+                    />
+                    <StyledText
+                      text={item.title}
+                      family={FONTS.Light}
+                      size={SIZES.normal}
+                      className="text-APP_ASH capitalize"
+                    />
+                  </View>
+                );
+              }}
+              horizontal
+              contentContainerStyle={{ gap: width * 0.15 }}
+            />
+          </View>
+        </>
+      </ScrollView>
     </Container>
   );
 };

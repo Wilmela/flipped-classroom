@@ -2,6 +2,7 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import StyledText from "./StyledText";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
+import { checkScreenSize } from "../util/helper";
 
 type Props = {
   title: string;
@@ -10,6 +11,7 @@ type Props = {
   error?: string;
   handleUpdate: () => Promise<void>;
   placeholder: string;
+  color: string,
 };
 
 const Input = ({
@@ -19,6 +21,7 @@ const Input = ({
   error,
   handleUpdate,
   placeholder,
+  color,
 }: Props) => {
   return (
     <View className="flex flex-row items-center justify-between space-x-1">
@@ -27,7 +30,7 @@ const Input = ({
           style={{
             fontSize: SIZES.normal,
             fontFamily: FONTS.Light,
-            color: COLORS.APP_ASH,
+            color: color,
           }}
         >
           {title}
@@ -37,17 +40,21 @@ const Input = ({
           placeholder={placeholder}
           value={value}
           onChangeText={handleChange}
-          className="border-2 border-APP_ASH rounded-md p-2"
+          className="border border-APP_ASH rounded-md p-2"
         />
-        <Text>{error}</Text>
+
+        <Text className="text-red-400">{error}</Text>
       </View>
 
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={handleUpdate}
-        className="border bg-APP_YELLOW px-2 py-3.5 rounded-md"
+        className="bg-blue-500 px-2 rounded-md"
+        style={{
+          paddingVertical: checkScreenSize(9, 13),
+        }}
       >
-        <StyledText text="Update" size={SIZES.normal} family={FONTS.Light} />
+        <StyledText text="Update" size={SIZES.normal} family={FONTS.Light} style={{color: 'white'}} />
       </TouchableOpacity>
     </View>
   );
